@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>File Upload</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/86cdea905d.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="vol-remaining"><span id="vol">5.0</span> &#160 Remaining</div>
+    <form method="post" action="{% url 'upload_file' %}" enctype="multipart/form-data">
+      <div id="uploaddiv">
+        <div id="drop-zone">
+          <div id="drop-top"></div>
+          <div id="drop-bottom"></div>
+          <div id="drop-left"></div>
+          <div id="drop-right"></div>
+          <input type="file" name="file" id="fileInput" />
+          <div>
+            <img src="./images/upload-icon-20606.png" alt="Upload Logo" class="upload-logo" />
+            <span id="textbox">
+              <span id="dragtext"> Drag or Click Here </span>
+              <br /><br />
+              <span id="uploadname"> Nothing Selected </span>
+            </span>
+          </div>
+        </div>
+        <button id="uploadbutton" type="submit" name="submit">
+          <span>UPLOAD</span>
+          <i class="fa-solid fa-upload fa-bounce" style="color: #ffffff"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div id="files"></div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
